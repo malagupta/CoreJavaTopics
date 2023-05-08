@@ -2,13 +2,16 @@ package generics_intro;
 import java.util.ArrayList;
 import java.util.List;
 
-record UsedPen(String penType) {}
-record UsedPencil(String name, double price) {}
+interface WritingDevices {}
+record UsedPen(String penType) implements WritingDevices {}
+record UsedPencil(String name, double price) implements WritingDevices {}
 
 public class ProjectSourcing {
     public static void main(String[] args) {
-        List<UsedPen, UsedPencil> usedPens = new ArrayList<>();
-        usedPens.add(new UsedPen("Ink Pen"));
+        List<WritingDevices> writingDevices = new ArrayList<>();
+        writingDevices.add(new UsedPen("Ink Pen"));
+        writingDevices.add(new UsedPencil("Apsara", 10.0));
 
+        writingDevices.forEach(System.out::println);
     }
 }
