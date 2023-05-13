@@ -1,4 +1,4 @@
-package generics_intro;
+package com.ejg.generics_intro;
 import java.util.ArrayList;
 import java.util.List;
 
